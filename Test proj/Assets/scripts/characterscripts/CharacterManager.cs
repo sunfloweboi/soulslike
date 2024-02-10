@@ -6,10 +6,17 @@ namespace SG
 {
     public class CharacterManager : MonoBehaviour
     {
+        public CharacterController characterController;
         
-        private void Awake()
+        protected virtual void Awake()
         {
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(this);
+            characterController = GetComponent<CharacterController>();
+        }
+
+        protected virtual void Update()
+        {
+            
         }
     }
 }
