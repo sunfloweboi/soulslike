@@ -3,10 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
-public class titlescreenmanager : MonoBehaviour
-{
-    public void StartNetworkAsHost()
+namespace SG{
+
+    public class Titlescreenmanager : MonoBehaviour
     {
-        NetworkManager.Singleton.StartHost();
+        public void StartNetworkAsHost()
+        {
+            NetworkManager.Singleton.StartHost();
+        }
+
+        
+
+        public void StartNewGame()
+        {
+            StartCoroutine(WorldSaveGameManager.Instance.Loadnewgame());
+        }
     }
 }
