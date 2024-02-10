@@ -31,5 +31,11 @@ namespace SG{
                 NetworkManager.Singleton.StartClient();
             }
         }
+        private void Start()
+        {
+        DontDestroyOnLoad(gameObject);
+        }
     }
+
+    
 }
