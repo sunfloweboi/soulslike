@@ -11,8 +11,10 @@ namespace SG
         public float horizontalMovement;
         public float moveAmount;
         private Vector3 moveDirection;
+        private Vector3 targetrotationDirection;
         [SerializeField] float walkingSpeed = 2;
         [SerializeField] float runningSpeed = 5;
+        [SerializeField] float rotationspeed = 10;
         protected override void Awake()
         {
             base.Awake();
@@ -21,6 +23,7 @@ namespace SG
         public void HandleAllMovement()
         {
             HandleGroundedMovement();
+            HandleRotation();
         }
 
         private void GetVerticalandHorizontalInput()
@@ -46,6 +49,24 @@ namespace SG
                 player.characterController.Move(moveDirection * walkingSpeed * Time.deltaTime);
             }
            
+        }
+
+        private void HandleRotation()
+        {
+            Vector3 targetrotationDirection = Vector3.zero;
+            targetrotationDirection = PlayerCamera.instance.cameraObject.transform.forward * verticalMovement;
+            targetrotationDirection += PlayerCamera.instance.cameraObject.transform.right * horizontalMovement;
+            targetrotationDirection.Normalize();
+            targetrotationDirection.y = 0;
+
+            if (targetrotationDirection == Vector3.zero)
+            {
+                targetrotationDirection = transform.forward;
+            }
+
+            Quaternion newRotation = Quaternion.LookRotation(targetrotationDirection);
+            Quaternion targetRotation = Quaternion.Slerp(transform.rotation, newRotation, rotationspeed * Time.deltaTime);
+            transform.rotation = targetRotation;
         }
     }
 }
