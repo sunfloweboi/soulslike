@@ -68,6 +68,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 55db5cb334f07f042a70433de9861042, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7172821062673405889}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 55db5cb334f07f042a70433de9861042, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7209724327373117871}
   m_SourcePrefab: {fileID: 100100000, guid: 55db5cb334f07f042a70433de9861042, type: 3}
 --- !u!1 &4411050488959790346 stripped
 GameObject:
@@ -106,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b468be2d7f0f1d429d0452bcfb1d2c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterController: {fileID: 0}
 --- !u!114 &3851795632348931165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +122,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2d588afd4830f64aac1e853afabaa57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  verticalMovement: 0
+  horizontalMovement: 0
+  moveAmount: 0
+  walkingSpeed: 2
+  runningSpeed: 5
 --- !u!143 &7172821062673405889
 CharacterController:
   m_ObjectHideFlags: 0
@@ -144,3 +153,19 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &-7209724327373117871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4411050488959790346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd0c7d9c791d1e74c97a803495ec6c58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  networkPosition:
+    m_InternalValue: {x: 0, y: 0, z: 0}
+  networkPositionVelocity: {x: 0, y: 0, z: 0}
+  networkpositionsmoothTime: 0.1

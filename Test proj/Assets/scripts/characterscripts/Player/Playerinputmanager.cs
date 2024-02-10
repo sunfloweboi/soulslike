@@ -55,6 +55,21 @@ namespace SG{
             SceneManager.activeSceneChanged -= OnSceneChange;
         }
 
+        private void OnApplicationFocus(bool focus)
+        {
+            if (enabled)
+            {
+                if (focus)
+                {
+                    playercontrols.Enable();
+                }
+                else
+                {
+                    playercontrols.Disable();
+                }
+                
+            }
+        }
         private void Update()
         {
             HandleMovementInput();
