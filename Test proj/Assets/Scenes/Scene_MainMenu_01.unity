@@ -1105,6 +1105,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3325645440737984424, guid: 0ca8798c54e53e542be0b3e6bd35c085, type: 3}
+      propertyPath: worldSceneIndex
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4608608719674458603, guid: 0ca8798c54e53e542be0b3e6bd35c085, type: 3}
       propertyPath: m_LocalPosition.x
       value: 378.614
@@ -1263,6 +1267,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: World Network Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 6763276479560478081, guid: 7aca5a6c78ae8ce478df651fe9ba1f74, type: 3}
+      propertyPath: NetworkConfig.PlayerPrefab
+      value: 
+      objectReference: {fileID: 4411050488959790346, guid: a97cf90e73ab8a04a8616a43d4a5d3a1, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
