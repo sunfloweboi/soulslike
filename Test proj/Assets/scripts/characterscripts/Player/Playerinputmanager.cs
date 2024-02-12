@@ -9,10 +9,18 @@ namespace SG{
     {
         public static Playerinputmanager instance;
         Playercontrols playercontrols;
+        [Header("player Movement Input")]
         [SerializeField] Vector2 movementinput;
         public float verticalInput;
         public float horizontalInput;
         public float moveAmount;
+
+        [Header("Camera Input")]
+        [SerializeField] Vector2 cameraInput;
+        public float cameraverticalInput;
+        public float camerahorizontalInput;
+
+        
 
         private void Awake()
         {
@@ -46,6 +54,7 @@ namespace SG{
             {
                 playercontrols = new Playercontrols();
                 playercontrols.Playermovement.Movement.performed += i => movementinput = i.ReadValue<Vector2>();
+                playercontrols.PlayerCam.CameraMovement.performed += i => cameraInput = i.ReadValue<Vector2>();
             }
             playercontrols.Enable();
         }
@@ -73,6 +82,7 @@ namespace SG{
         private void Update()
         {
             HandleMovementInput();
+            HandleCameraMovementInput();
         }
         private void HandleMovementInput()
         {
@@ -90,5 +100,10 @@ namespace SG{
             
             
         }
+        private void HandleCameraMovementInput()
+        {
+            cameraverticalInput = cameraInput.y;
+            camerahorizontalInput = cameraInput.x;
+        }    
     }
 }
