@@ -1107,7 +1107,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3325645440737984424, guid: 0ca8798c54e53e542be0b3e6bd35c085, type: 3}
       propertyPath: worldSceneIndex
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4608608719674458603, guid: 0ca8798c54e53e542be0b3e6bd35c085, type: 3}
       propertyPath: m_LocalPosition.x
